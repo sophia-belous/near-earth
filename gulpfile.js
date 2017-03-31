@@ -48,7 +48,7 @@ const config = {
 };
 
 gulp.task('development', ['inject-dev', 'server']);
-gulp.task('production', ['inject-prod']);
+gulp.task('production', ['inject-prod', 'server']);
 
 gulp.task('inject-dev', ['compile-sass', 'server'], function () {
     const target = gulp.src('index.tpl.html').pipe(rename('index.html'));
