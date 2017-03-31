@@ -1,0 +1,31 @@
+.error-page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $main-button-color;
+        color: white;
+    
+    .error-text {
+        font-size: 4em;
+        font-weight: 700;
+        color: white;
+    }
+
+    .oops-text {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .description-text {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .go-to-btn {
+        @include accept-button;
+        color: white;
+        border: $learn-more-border-color 2px solid;
+    }
+}

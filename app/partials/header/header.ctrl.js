@@ -4,8 +4,9 @@
     angular.module('NearEarth')
         .controller('HeaderCtrl', HeaderCtrl);
 
-    HeaderCtrl.$inject = ['$state', 'AsteroidService', '$rootScope'];
-    function HeaderCtrl($state, AsteroidService, $rootScope) {
+    HeaderCtrl.$inject = ['$scope', '$state', 'AsteroidService', '$rootScope'];
+    function HeaderCtrl($scope, $state, AsteroidService, $rootScope) {
+        $scope.$state = $state;
         const vm = this;
         vm.allAsteroids = [];
         vm.querySearch = querySearch;

@@ -7,10 +7,14 @@
     AsteroidListCtrl.$inject = ['$scope', '$http', 'moment', 'AsteroidService', '$rootScope'];
     function AsteroidListCtrl($scope, $http, moment, AsteroidService, $rootScope) {
         const vm = this;
-        vm.endDate = moment(Date.now()).format("YYYY-MM-DD");
+        const dateNow = Date.now();
+        vm.endDate = moment(dateNow).format("YYYY-MM-DD");
         vm.startDate = moment(vm.endDate)
                         .subtract(7, "days")
                         .format("YYYY-MM-DD");
+        vm.endCalendarDate = moment(dateNow).toDate();
+        vm.startCalendarDate = moment(vm.endDate).subtract(7, "days").toDate();
+
         vm.date = formatString(vm.startDate);
         vm.getPrevNEOList = getPrevNEOList;
         vm.getNextNEOList = getNextNEOList;
@@ -18,15 +22,26 @@
         vm.onlySevenDaysAllowed = onlySevenDaysAllowed;
         vm.nasaData = {};
         vm.NEOData = [];
-
+        vm.firstChange = true;
         vm.diffBetweenDates = getDifDate(vm.startDate, vm.endDate);
 
-        emitAboutChanges();
+        emitAboutChanges(true);
         getListOfAsteroids(vm.startDate, vm.endDate);
 
-        $scope.$watch('vm.startCalendarDate', () => vm.endCalendarDate = undefined);
+        $scope.$watch('vm.startCalendarDate', () => {
+            debugger;
+            if(!vm.firstChange) {
+                vm.endCalendarDate = undefined
+            } else {
+                vm.firstChange = !vm.firstChange;
+            }
+        });
 
-        function emitAboutChanges() {
+        function emitAboutChanges(is) {
+            vm.firstChange = is;
+            
+            vm.startCalendarDate = moment(vm.startDate).toDate();
+            vm.endCalendarDate = moment(vm.endDate).toDate();
             $rootScope.$emit('changeDates', { startDate: vm.startDate, endDate: vm.endDate})
         }
         
@@ -35,7 +50,7 @@
             vm.startDate = moment(vm.startDate)
                             .subtract(vm.diffBetweenDates, "days")
                             .format("YYYY-MM-DD");
-            emitAboutChanges();
+            emitAboutChanges(true);
             getListOfAsteroids(vm.startDate, vm.endDate);
         }
 
@@ -44,7 +59,7 @@
             vm.endDate = moment(vm.endDate)
                             .add(vm.diffBetweenDates, "days")
                             .format("YYYY-MM-DD");
-            emitAboutChanges();
+            emitAboutChanges(true);
             getListOfAsteroids(vm.startDate, vm.endDate);
         }
 

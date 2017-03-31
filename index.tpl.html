@@ -19,7 +19,7 @@
 
 <body>
     <div class="whole-content" layout="column">
-        <header class="neo-header" layout="row" ui-view="header">
+    <header class="neo-header" layout="row" ui-view="header" ng-show="!$state.includes('Asteroids.NotFound')">
         </header>
         <main class="neo-content" ui-view layout="column">
         </main>
