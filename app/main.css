@@ -1,0 +1,185 @@
+.neo-header {
+  z-index: 222; }
+  .neo-header md-toolbar {
+    min-height: 80px;
+    background-color: white; }
+    .neo-header md-toolbar .md-toolbar-tools {
+      height: 80px;
+      max-height: 80px; }
+      .neo-header md-toolbar .md-toolbar-tools .md-icon-button {
+        height: 80px;
+        width: 80px;
+        margin-left: -16px;
+        padding: 0;
+        background-color: #2f4c5a;
+        border-radius: 0;
+        color: white; }
+        .neo-header md-toolbar .md-toolbar-tools .md-icon-button img.logo {
+          height: 80px;
+          width: 80px; }
+        .neo-header md-toolbar .md-toolbar-tools .md-icon-button span {
+          font-size: 22px;
+          text-transform: none; }
+        .neo-header md-toolbar .md-toolbar-tools .md-icon-button sup {
+          font-size: 16px;
+          display: inline-block; }
+        .neo-header md-toolbar .md-toolbar-tools .md-icon-button:hover {
+          background-color: #2f4c5a; }
+      .neo-header md-toolbar .md-toolbar-tools .mobile-nav .fa.fa-bars {
+        color: #37394C; }
+      .neo-header md-toolbar .md-toolbar-tools .desktop-nav {
+        height: 100%;
+        width: 100%;
+        border-right-width: 2px;
+        border-color: #eee;
+        border-right-style: solid; }
+        .neo-header md-toolbar .md-toolbar-tools .desktop-nav .nav-list {
+          height: 100%;
+          margin: 0; }
+          .neo-header md-toolbar .md-toolbar-tools .desktop-nav .nav-list li {
+            padding: 0 44px 0 0; }
+            @media screen and (max-width: 1015px) {
+              .neo-header md-toolbar .md-toolbar-tools .desktop-nav .nav-list li {
+                padding: 0 35px 0 0; } }
+            .neo-header md-toolbar .md-toolbar-tools .desktop-nav .nav-list li > a.nav-tab {
+              font-size: 11px;
+              color: #37394C;
+              vertical-align: middle;
+              text-transform: uppercase;
+              letter-spacing: 1px; }
+          @media screen and (max-width: 1015px) {
+            .neo-header md-toolbar .md-toolbar-tools .desktop-nav .nav-list {
+              padding-left: 14px; } }
+      .neo-header md-toolbar .md-toolbar-tools .search-wrapper form.search-form {
+        padding-left: 40px; }
+        .neo-header md-toolbar .md-toolbar-tools .search-wrapper form.search-form .fa.fa-search {
+          font-size: 14px;
+          color: #37394C; }
+        .neo-header md-toolbar .md-toolbar-tools .search-wrapper form.search-form md-autocomplete {
+          height: 80px; }
+          .neo-header md-toolbar .md-toolbar-tools .search-wrapper form.search-form md-autocomplete md-autocomplete-wrap {
+            height: 80px;
+            box-shadow: none; }
+            .neo-header md-toolbar .md-toolbar-tools .search-wrapper form.search-form md-autocomplete md-autocomplete-wrap input:not(.md-input) {
+              height: 80px;
+              font-size: 13px;
+              font-style: italic; }
+      .neo-header md-toolbar .md-toolbar-tools .profile-info {
+        height: 30px;
+        text-align: right; }
+        .neo-header md-toolbar .md-toolbar-tools .profile-info .search-icon {
+          min-width: auto;
+          min-height: auto;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          color: #37394C; }
+          .neo-header md-toolbar .md-toolbar-tools .profile-info .search-icon .fa.fa-search {
+            font-size: 1.5em; }
+        .neo-header md-toolbar .md-toolbar-tools .profile-info .info-icon {
+          width: 18px;
+          margin-left: 40px; }
+          @media (max-width: 480px) {
+            .neo-header md-toolbar .md-toolbar-tools .profile-info .info-icon.reload, .neo-header md-toolbar .md-toolbar-tools .profile-info .info-icon.bell-icon {
+              display: none; } }
+        .neo-header md-toolbar .md-toolbar-tools .profile-info .profile-img {
+          margin-left: 40px; }
+          .neo-header md-toolbar .md-toolbar-tools .profile-info .profile-img img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%; }
+      .neo-header md-toolbar .md-toolbar-tools.search-header .md-icon-button .fa.fa-arrow-left {
+        font-size: 24px; }
+
+html, body {
+  font-family: Open Sans;
+  background-color: #f4f1ea; }
+
+.asteroid-list .heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  padding-left: 100px;
+  background: #2f4c5a;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.4); }
+  .asteroid-list .heading md-datepicker .md-datepicker-button {
+    height: 100%; }
+    .asteroid-list .heading md-datepicker .md-datepicker-button .md-datepicker-calendar-icon {
+      color: white; }
+  .asteroid-list .heading md-datepicker .md-datepicker-input {
+    background: #2f4c5a; }
+  .asteroid-list .heading .date-wrapper .save-buttom {
+    min-height: 44px;
+    min-width: 160px;
+    border-radius: 6px;
+    margin-left: 50px;
+    color: white;
+    border: rgba(255, 255, 255, 0.5) 2px solid; }
+    .asteroid-list .heading .date-wrapper .save-buttom.md-primary.md-raised {
+      background-color: #2f4c5a;
+      box-shadow: none; }
+      .asteroid-list .heading .date-wrapper .save-buttom.md-primary.md-raised:hover {
+        background-color: #2f4c5a; }
+    .asteroid-list .heading .date-wrapper .save-buttom span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: white; }
+  @media (max-width: 620px) {
+    .asteroid-list .heading {
+      padding-left: 0;
+      text-align: center; }
+      .asteroid-list .heading .date-wrapper {
+        display: -webkit-inline-flex;
+        display: inline-flex; } }
+
+.asteroid-list .asteroid-content .asteroid-btns .md-button {
+  min-height: 44px;
+  min-width: 160px;
+  border-radius: 6px; }
+  .asteroid-list .asteroid-content .asteroid-btns .md-button.md-primary.md-raised {
+    background-color: #2f4c5a;
+    box-shadow: none; }
+    .asteroid-list .asteroid-content .asteroid-btns .md-button.md-primary.md-raised:hover {
+      background-color: #2f4c5a; }
+  .asteroid-list .asteroid-content .asteroid-btns .md-button span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white; }
+  @media (max-width: 480px) {
+    .asteroid-list .asteroid-content .asteroid-btns .md-button {
+      min-width: 125px; } }
+
+.asteroid-list .asteroid-content .asteroids-info {
+  font-size: 11px;
+  color: #37394C;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+.asteroid-list .asteroid-content md-tabs .md-tab.md-active {
+  color: #37394C; }
+
+.md-datepicker-calendar-pane {
+  margin-top: 46px; }
+  .md-datepicker-calendar-pane .md-datepicker-input-mask {
+    display: none; }
+
+.asteroid-details {
+  background-color: #f4f1ea; }
+  .asteroid-details .colored-bgd {
+    position: absolute;
+    width: 100%;
+    height: 280px;
+    background-color: #2f4c5a;
+    z-index: 0; }
+  .asteroid-details .asteroid-card {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    margin: 100px auto;
+    z-index: 2; }
+    .asteroid-details .asteroid-card .virtual-container {
+      height: 300px; }

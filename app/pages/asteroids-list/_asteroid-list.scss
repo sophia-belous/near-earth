@@ -1,0 +1,75 @@
+html, body {
+    font-family: Open Sans;
+    background-color:   $background-color;
+}
+
+.asteroid-list {
+    .heading {
+            @include montserrat-font;
+            padding-left: 100px;
+            background: $main-button-color;
+            box-shadow: $container-shadow;
+
+            md-datepicker {
+                .md-datepicker-button {
+                    height: 100%;
+                    .md-datepicker-calendar-icon {
+                        color: white;
+                    }
+                }
+
+                .md-datepicker-input {
+                    background: $main-button-color;
+                }
+            }
+
+            .date-wrapper {
+                .save-buttom {
+                    @include accept-button;
+                    margin-left: 50px;
+                    color: white;
+                    border: $learn-more-border-color 2px solid;
+                }
+            }
+           
+            @media (max-width: $mobile-width-md) {
+                padding-left: 0;
+                text-align: center;
+                .date-wrapper {
+                    display: -webkit-inline-flex;
+                    display: inline-flex;
+                }
+            }
+    }
+
+    .asteroid-content {
+        .asteroid-btns {
+            .md-button {
+                @include accept-button;
+
+                @media (max-width: $mobile-width-sm) {
+                    min-width: 125px;
+                }
+            }
+        }
+
+        .asteroids-info {
+            font-size: 11px;
+            color: $general-text-color;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        md-tabs .md-tab.md-active {
+            color: $general-text-color;
+        }
+    }
+}
+
+.md-datepicker-calendar-pane {
+    margin-top: 46px;
+    .md-datepicker-input-mask {
+        display: none;
+    }
+}

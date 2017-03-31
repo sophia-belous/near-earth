@@ -1,0 +1,34 @@
+<!--<div>{{vm.currentAsteroid.name}}</div>-->
+<div class="asteroid-details" layout-align="start center">
+    <div class="colored-bgd"></div>
+    <md-card class="asteroid-card">
+        <img src="images/asteroid-wallpaper.jpg" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{vm.currentAsteroid.name}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <h3>Absolute Magnitude: {{ vm.currentAsteroid.absolute_magnitude_h }}H</h3>
+            <h4>Estimated Diameter: min - {{ vm.currentAsteroid.estimated_diameter.kilometers.estimated_diameter_min | number:
+                3}}km, max - {{ vm.currentAsteroid.estimated_diameter.kilometers.estimated_diameter_max | number: 3}}km</h4>
+            <md-list flex>
+                <md-virtual-repeat-container class="virtual-container">
+                <md-list-item class="md-3-line" md-virtual-repeat="data in vm.currentAsteroid.close_approach_data" ng-click="null">
+                    <div class="md-list-item-text" layout="column">
+                        <h3>Orbiting body: {{ data.orbiting_body }}</h3>
+                        <h4>Relative velocity: {{ data.relative_velocity.kilometers_per_hour | number: 0 }}km/h</h4>
+                        <p>{{ data.close_approach_date }}</p>
+                    </div>
+                </md-list-item>
+                <md-divider ng-if="!$last"></md-divider>
+                </md-virtual-repeat-container>
+            </md-list>
+
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-href="{{vm.currentAsteroid.nasa_jpl_url}}" target="_blank">Nasa Link Details</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-card>
+</div>

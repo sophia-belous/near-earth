@@ -1,0 +1,80 @@
+@mixin open-sans-font {
+  font: {
+    family: 'Open Sans';
+    size: 13px;
+  }
+}
+
+@mixin open-sans-font-size($size) {
+  font: {
+    family: 'Open Sans';
+    size: $size;
+  }
+}
+
+@mixin open-sans-font-size-weight($size, $weight) {
+  font: {
+    family: 'Open Sans';
+    size: $size;
+    weight: $weight;
+  }
+}
+@mixin montserrat-font {
+  font: {
+    family: 'Montserrat', sans-serif;
+    size: 13px;
+  }
+}
+@mixin montserrat-font-size($size) {
+  font: {
+    family: 'Montserrat', sans-serif;
+    size: $size;
+  }
+}
+
+@mixin montserrat-font-size-weight($size, $weight) {
+  font: {
+    family: 'Montserrat', sans-serif;
+    size: $size;
+    weight: $weight;
+  }
+}
+
+@mixin accept-button {
+    min-height: 44px;
+    min-width: 160px;
+    border-radius: 6px;
+    &.md-primary.md-raised {
+        background-color: $main-button-color;
+        box-shadow: none;
+        &:hover {
+            background-color: $main-button-color;
+        }
+    }
+    span {
+        @include montserrat-font-size-weight(12px, bold);
+        letter-spacing: 1px;
+        color: white;
+    }
+}
+
+@mixin corp-card-box($max-width, $margin-bottom) {
+  max-width: $max-width;
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-bottom: $margin-bottom;
+  padding-top: 41px;
+  text-align: center;
+  background: white;
+  border-radius: 6px;
+  box-shadow: $container-shadow;
+  .corp-card-image {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

@@ -1,0 +1,23 @@
+.asteroid-details {
+    background-color: $background-color;
+    
+    .colored-bgd {
+        position: absolute;
+        width: 100%;
+        height: 280px;
+        background-color: $main-button-color;
+        z-index: 0;
+    }
+
+    .asteroid-card {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        margin: 100px auto;
+        z-index: 2;
+
+        .virtual-container {
+            height: 300px;
+        }
+    }
+}

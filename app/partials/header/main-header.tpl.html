@@ -1,0 +1,71 @@
+<md-toolbar>
+    <div class="md-toolbar-tools" ng-hide="showSearchBarDiv">
+        <md-button class="md-icon-button" flex="none" aria-label="Go Back" ui-sref="Asteroids.List">
+            <img class="logo" src="./favicon.png" alt="">
+        </md-button>
+        <div class="desktop-nav" flex="45" hide-xs layout-align="center center">
+            <ul class="nav-list" layout layout-align="start center">
+                <li>
+                    <a class="nav-tab" href="www.linkedin.com/in/sofiya-belavus">My LinkedIn</a>
+                </li>
+                <li>
+                    <a class="nav-tab" href="https://api.nasa.gov/api.html#NeoWS">Neo API</a>
+                </li>
+                <li>
+                    <a class="nav-tab" href="https://github.com/sophia-belous/near-earth">Github Link</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-wrapper" flex="35" flex-xs="60" flex-sm="60" hide-xs>
+            <form class="search-form" role="search" novalidate flex="none" layout="row" layout-align="center center">
+                <i class="fa fa-search" flex="none"></i>
+                <md-autocomplete class="search-input"
+                                 flex
+                                 md-no-cache="true"
+                                 md-selected-item="vm.selectedItem"
+                                 md-search-text="vm.searchText"
+                                 md-search-text-change="vm.search(vm.searchText)"
+                                 md-items="item in vm.querySearch(vm.searchText)"
+                                 md-selected-item-change="vm.openAsteroidPage(vm.selectedItem.id)"
+                                 md-item-text="item.display"
+                                 md-min-length="0"
+                                 placeholder="Search asteroids">
+                    <md-item-template>
+                        <span md-highlight-text="vm.searchText" ng-model="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No asteroids matching "{{vm.searchText}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+        <span flex></span>
+        <div class="profile-info" layout layout-align="end center">
+            <md-button class="search-icon" aria-label="Search" hide show-xs ng-click="showSearchBarDiv = true">
+                <i class="fa fa-search" flex="none"></i>
+            </md-button>
+        </div>
+    </div>
+    <div layout="row" class="md-toolbar-tools search-header" show-sm show-md hide-gt-md ng-show="showSearchBarDiv">
+        <md-button class="md-icon-button" aria-label="Back" ng-click="showSearchBarDiv = false">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </md-button>
+        <div class="search-wrapper" flex>
+            <form class="search-form" role="search" novalidate flex="none" layout="row" layout-align="center center">
+                <i class="fa fa-search" flex="none"></i>
+                <md-autocomplete class="search-input" flex md-no-cache="vm.noCache" md-selected-item="vm.selectedItem"
+                    md-search-text="vm.searchText" md-items="item in vm.querySearch(vm.searchText)" md-item-text="item.display"
+                    md-min-length="0" placeholder="Search companies">
+                    <md-item-template>
+                        <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No asteroids matching "{{vm.searchText}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </div>
+    </div>
+
+</md-toolbar>
+<md-progress-linear ng-show="stateIsLoading" md-mode="indeterminate"></md-progress-linear>

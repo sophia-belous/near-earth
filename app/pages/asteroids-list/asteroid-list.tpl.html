@@ -1,0 +1,39 @@
+<div class="asteroid-list" layout-align="start center">
+    <section class="heading">
+        <div class="date-wrapper" layout="row" layout-xs="column" layout-align="start center" md-theme="dark-theme">
+            <md-datepicker ng-model="vm.startCalendarDate" md-placeholder="Start date" md-open-on-focus></md-datepicker>
+            <md-datepicker ng-model="vm.endCalendarDate" md-placeholder="End date" md-open-on-focus md-date-filter="vm.onlySevenDaysAllowed"></md-datepicker>
+            <md-button class="save-buttom" ng-click="vm.changeDateRange(vm.startCalendarDate, vm.endCalendarDate)" aria-label="Get started">Save</md-button>
+        </div>
+    </section>
+    <section class="asteroid-content">
+        <div class="asteroid-btns" layout="row" layout-align="space-between center">
+            <md-button class="md-raised md-primary" ng-click="vm.getPrevNEOList()">prev</md-button>
+            <div class="asteroids-info" layout="row" hide-xs>
+                <div class="count">Count of asteroids: {{vm.nasaData.element_count}}</div>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="vm.getNextNEOList()">next</md-button>
+        </div>
+        <md-card>
+            <md-card-content>
+                <md-tabs md-border-bottom md-autoselect md-dynamic-height>
+                    <md-tab ng-repeat="tabObject in vm.NEOData | orderBy: 'date'" label="{{tabObject.date}}">
+                        <div class="demo-tab tab{{$index}}" style="padding: 25px; text-align: center;">
+                            <md-list flex>
+                                <md-list-item class="md-3-line" ng-repeat="item in tabObject.nearEarthObjects" ui-sref="Asteroids.Detail({id: item.neo_reference_id})">
+                                    <img src="images/ufo.jpg" class="md-avatar" alt="{{item.name}}" />
+                                    <div class="md-list-item-text" layout="column">
+                                        <h3>{{ item.name }}</h3>
+                                        <h4>Absolute magnitude: {{ item.absolute_magnitude_h }}H</h4>
+                                        <p>Estimated diameter: min - {{ item.estimated_diameter.kilometers.estimated_diameter_min | number: 3}}km, max  - {{ item.estimated_diameter.kilometers.estimated_diameter_max | number: 3}}km</p>
+                                    </div>
+                                    <md-divider ng-if="!$last"></md-divider>
+                                </md-list-item>
+                            </md-list>
+                        </div>
+                    </md-tab>
+                </md-tabs>
+            </md-card-content>
+        </md-card>
+    </section>
+</div>

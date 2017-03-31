@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NearEarth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <title>Near Earth</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700italic|Open+Sans+Condensed:300,300italic,700);
+    </style>
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+
+<body>
+    <div class="whole-content" layout="column">
+        <header class="neo-header" layout="row" ui-view="header">
+        </header>
+        <main class="neo-content" ui-view layout="column">
+        </main>
+    </div>
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+
+</html>
